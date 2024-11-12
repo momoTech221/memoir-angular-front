@@ -1,0 +1,66 @@
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col">
+                    <h3 class="page-title">Gestion des utilisateurs</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a routerLink="/gestionUser" style="color: green;">Utilisateurs Actifs</a></li>
+                        <li class="breadcrumb-item active"><a routerLink="/gestionHideUser" style="color: red;">Utilisateurs bloqués</a></li>
+                    </ul>
+                    <a (click)="allUser()" class="btn add-btn" style="background-color: green;" data-toggle="modal" data-target="#add_client"><i class="fa fa-plus"></i> Add Client</a>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card mb-0">
+                    <div class="card-header">
+                        <h4 class="card-title mb-0" style="color: green;">Gestion des Utilisateurs Actifs</h4>
+                        <p class="card-text">
+                            Ces utilisateurs sont ceux dont les comptes sont <code style="color: green;">Actifs</code> 
+                        </p>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="table-responsive">
+                            <table class="datatable table table-stripped mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Nom</th>
+										<th>Prénom</th>
+										<th>Sexe</th>
+										<th>Adresse</th>
+										<th>Téléphone</th>
+                                        <th>Role</th>
+                                        <th>Actions</th> 
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- <tr *ngForm="let user of newTab" > -->
+                                    <tr>
+                                        <td>DIALLO</td>
+                                        <td>Mamadou</td>
+                                        <td>Masculin</td>
+                                        <td>Djifanghor</td>
+                                        <td>775783058</td>
+                                        <td>Admin</td>
+                                        <td>
+                                            <button style="background-color: blue;color: white;margin-right: 5px;"><i  class="la la-edit"></i></button>
+                                            <button  style="background-color: red;color: white;"><i  class="la la-remove" ></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>			
+</div>

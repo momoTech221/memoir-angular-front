@@ -1,0 +1,71 @@
+<div class="account-page">
+    <div class="main-wrapper">
+        <div class="account-content">
+            <a  class="btn btn-primary apply-btn" (click)="faireDemmande()">Faire une demmande</a>
+            <div class="container">
+            
+                <!-- Account Logo -->
+                <div class="account-logo">
+                    <a ><img src="assets/img/logo2.png" alt="Xeweul App"></a>
+                </div>
+                <!-- /Account Logo -->
+                
+                <div class="account-box">
+                    <div class="account-wrapper">
+                        <h3 class="account-title">Page de Connexion</h3>
+                        <p class="account-subtitle slog">Bienvenue sur Xeweul</p>
+                        
+                        <div *ngIf="connectionError == true"  class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <strong>Erreur!</strong> Le service est momentannement indisponible,merci de réessayer ultérieurement.
+                            <button type="button" (click)="serveurIndisponible()" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div *ngIf="invalidForm == true" class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Error!</strong> Veuillez remplir tous les champs 
+                            <button type="button" (click)="formInvalid()" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div *ngIf="messages != ''" class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Error!</strong> Adresse mail ou mot de passe incorrect !!!
+                            <button type="button" (click)="loginOrPassword()" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <!-- Account Form -->
+                        <form [formGroup]="loginForm" (ngSubmit)="seConnecter()">
+                            <div class="form-group">
+                                <label>Addresse Mail</label>
+                                <input formControlName="mail" class="form-control" placeholder="Entrer votre adresse mail" type="text">
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label>Mot de Passe</label>
+                                    </div>
+                                    
+                                </div>
+                                <input class="form-control" type="password" formControlName="mdp">
+                            </div>
+                            <div class="col-auto" >
+                                <a class="text-muted" routerLink="/forgotPassword">
+                                    Mot de passe oublié ?
+                                </a>
+                            </div>
+                            <div class="form-group text-center">
+                                <button class="btn btn-primary account-btn" type="submit">Se Connecter</button>
+                            </div>
+                            
+                            <div class="account-footer">
+                                <p>Vous n'avez pas de compte? <a routerLink="/register">S'inscrire</a></p>
+                            </div>
+                        </form>
+                        <!-- /Account Form -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
